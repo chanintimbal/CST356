@@ -10,11 +10,11 @@
         <h1 class="header">Lab 2 - Chanin Timbal</h1>
     </div>
     <form class="formstyle" action="https://otapp-cstwebdev.azurewebsites.net/" method="post">
-        Student ID: <input type="text" name="student_id"><br>
-        Name: <input type="text" name="name"><br>
-        Graduation Date: <input type="text" name="graduation_date"><br>
+        Student ID: <input type="text" name="student_id" maxlength="9"><br>
+        Name: <input type="text" name="name" placeholder="First Last"><br>
+        Graduation Date: <input type="text" name="graduation_date" placeholder="MM-DD-YYYY"><br>
         Email Address: <input type="text" name="email"><br>
-        Age: <input type="text" name="age"><br>
+        Age: <input type="number" name="age" min="0" maxlength="3"><br>
         Hobby: <input type="text" name="hobby"><br>
         User Type: <select name="user_type">
             <option value="Student">Student</option>
@@ -40,6 +40,17 @@
         border-radius: 5px;
         width: 380px;
         margin: auto;
+    }
+
+    input[type="number"], select, textarea {
+        font-family: "Times New Roman", sans-serif;
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
     }
 
     input[type="text"], select, textarea {
