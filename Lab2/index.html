@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2</title>
+</head>
+<body>
+    <div>
+        <h1 class="header">Lab 2 - Chanin Timbal</h1>
+    </div>
+    <form class="formstyle">
+        Student ID: <input type="text" name="student_id"><br><br>
+        Name: <input type="text" name="name"><br><br>
+        Graduation Date: <input type="text" name="graduation_date"><br><br>
+        Email Address: <input type="text" name="email"><br><br>
+        Age: <input type="text" name="age"><br><br>
+        Hobby: <input type="text" name="hobby"><br><br>
+        User Type: <select name="user_type">
+            <option value="Student">Student</option>
+            <option value="Faculty/Staff">Faculty/Staff</option>
+        </select><br><br>
+        Favorite Band: <input type="text" name="favorite_band"><br><br>
+        Biography: <textarea name="biography" rows="4" cols="50"></textarea><br><br>
+        <input type="hidden" name="supersecrettext" value="Alright then, keep your secrets."><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+<style>
+    .header {
+        font-family: "Times New Roman", sans-serif;
+        text-align: center;
+    }
+
+    .formstyle {
+        font-family: "Times New Roman", sans-serif;
+        background-color: #bddbe5;
+        padding: 20px;
+        border-radius: 5px;
+        width: 380px;
+        margin: auto;
+    }
+
+    input[type="text"], select, textarea {
+        font-family: "Times New Roman", sans-serif;
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        background-color: #4c99af;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 24px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</html>
