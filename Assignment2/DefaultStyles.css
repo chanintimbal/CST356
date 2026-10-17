@@ -1,0 +1,98 @@
+body{
+
+}
+header img.logo{
+    float:left;
+    width: 100px;
+}
+.wrapper{
+    min-width: 480px;
+    max-width:1000px;
+    margin:0 auto;
+    border: solid 1px #cdcdcd;
+    background-color: #fff;
+}
+.group::after{
+    content: "";
+    display:table;
+    clear:both;
+}
+#mainNav{
+
+}
+li a{
+
+}
+#mainNav li{
+
+}
+#mainNav  li > a{
+
+    
+}
+#mainNav > li > a{
+
+}
+#mainNav >  li:last-child > a{
+
+}
+#news{
+
+}
+#news h3{
+
+}
+#news article{
+
+    
+}
+#news article p:last-of-type{
+
+}
+#featured{
+
+}
+
+.featuredItem{
+
+    
+}
+.featuredItem h3{
+
+}
+.featuredItem img{
+
+    
+}
+
+#mainGrid{
+
+}
+#bannerad{
+
+}
+#bannerad:before{
+
+}
+#news{
+
+}
+#featured{
+
+}
+aside{
+
+}
+.subMenu{
+
+}
+#mainNav li a:hover{
+
+}
+#mainNav li{
+
+}
+
+#mainNav > li:hover > .subMenu{
+
+}
