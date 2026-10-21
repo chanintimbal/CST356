@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fun with CSS - CST356</title>
+
+    <style>
+        @media (max-width: 768px) {
+            body {
+                margin: 0;
+                background-color: #6DA398;
+                border: solid 8px;
+                border-color: #00362C;
+            }
+            #wrapper{
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #mainMenu {
+                box-sizing: border-box;
+                background-color: #44887B;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-align: left;
+            }
+
+            #mainMenu a{
+                text-decoration: none;
+                color: white;
+            }
+
+            #mainMenu li{
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            #mainMenu li:nth-child(2) {
+                background-color: #246D5F;
+            }
+
+            #mainMenu li:nth-child(4) {
+                background-color: #246D5F;
+            }
+
+            #mainMenu li:hover{
+                background-color: white;
+            }
+
+            #mainMenu li:hover a{
+                color: black;
+            }
+
+            .subMenu {
+                box-sizing: border-box;
+                background-color: #0E5144;
+                width: 100%;
+                padding: 0;
+                list-style: none;
+                text-align: left;
+            }
+
+            .subMenu a{
+                text-decoration: none;
+                color: white;
+            }
+
+            .subMenu li{
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            .subMenu li:nth-child(2){
+                background-color: #246D5F;
+            }
+
+            .subMenu li:nth-child(4){
+                background-color: #246D5F;
+            }
+
+            .subMenu li:hover{
+                background-color: white;
+            }
+
+            .subMenu li:hover a{
+                color: black;
+            }
+
+            .borderedHeaderTable{
+                border-collapse: collapse;
+                width: 100%;
+                text-align: left;
+            }
+
+            .borderedHeaderTable thead{
+                border: 2px solid; 
+            }
+
+        }
+
+        @media (min-width: 768px) and (max-width: 992px) {
+            body{
+                border: 5px solid #6DA398;
+                background-color: #b5e0d8;
+            }
+            #wrapper{
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        
+            #wrapper > nav{
+                grid-column: 1/-1;
+            }
+
+            main {
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                gap: 10px;
+            }
+
+            #mainMenu {
+                display: flex;
+                background-color: #44887B;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            #mainMenu a{
+                text-decoration: none;
+                color: white;
+                text-align: center;;
+            }
+
+            #mainMenu li{
+                flex: 1;
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            #mainMenu li:nth-child(2) {
+                background-color: #246D5F;
+            }
+
+            #mainMenu li:nth-child(4) {
+                background-color: #246D5F;
+            }
+
+            #mainMenu li:hover{
+                background-color: white;
+            }
+
+            #mainMenu li:hover a{
+                color: black;
+            }
+
+            .subMenu {
+                box-sizing: border-box;
+                background-color: #0E5144;
+                width: 100%;
+                margin-top: 0;
+                padding: 0;
+                list-style: none;
+                text-align: left;
+            }
+
+            .subMenu a{
+                text-decoration: none;
+                color: white;
+            }
+
+            .subMenu li{
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            .subMenu li:nth-child(2){
+                background-color: #246D5F;
+            }
+
+            .subMenu li:nth-child(4){
+                background-color: #246D5F;
+            }
+
+            .subMenu li:hover{
+                background-color: white;
+            }
+
+            .subMenu li:hover a{
+                color: black;
+            }
+
+            .borderedHeaderTable{
+                border-collapse: collapse;
+                grid-column: 2/3;
+                text-align: left;
+                width: 60%;
+            }
+
+            .borderedHeaderTable thead{
+                border: 2px solid; 
+            }
+
+            .col3{
+                grid-column: 1/-1;
+                background-color:#6DA398;
+            }
+        }
+
+        @media (min-width: 992px){
+            body{
+                border: 5px solid #6DA398;
+                background-color: #b5e0d8;
+            }
+            #wrapper{
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        
+            #wrapper > nav{
+                grid-column: 1/-1;
+            }
+
+            main {
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                gap: 10px;
+            }
+
+            #mainMenu {
+                display: flex;
+                background-color: #44887B;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            #mainMenu a{
+                text-decoration: none;
+                color: white;
+                text-align: center;;
+            }
+
+            #mainMenu li{
+                flex: 1;
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            #mainMenu li:nth-child(2) {
+                background-color: #246D5F;
+            }
+
+            #mainMenu li:nth-child(4) {
+                background-color: #246D5F;
+            }
+
+            #mainMenu li:hover{
+                background-color: white;
+            }
+
+            #mainMenu li:hover a{
+                color: black;
+            }
+
+            .subMenu {
+                background-color: #0E5144;
+                width: 100%;
+                padding: 0;
+                margin-top: 0px;
+                list-style: none;
+                text-align: left;
+            }
+
+            .subMenu a{
+                text-decoration: none;
+                color: white;
+            }
+
+            .subMenu li{
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            .subMenu li:nth-child(2){
+                background-color: #246D5F;
+            }
+
+            .subMenu li:nth-child(4){
+                background-color: #246D5F;
+            }
+
+            .subMenu li:hover{
+                background-color: white;
+            }
+
+            .subMenu li:hover a{
+                color: black;
+            }
+
+            .borderedHeaderTable{
+                border-collapse: collapse;
+                width: 100%;
+                text-align: left;
+            }
+
+            .borderedHeaderTable thead{
+                border: 2px solid; 
+            }
+
+            .col3{
+                grid-column: 3;
+                background-color:#6DA398;
+            }
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <img src="http://oregontechcdn.azureedge.net/img/ot-logo.png" alt="Oregon Tech" />
+            <h1>Fun with CSS</h1>
+        </header>
+        <nav>
+            <ul id="mainMenu" class="group">
+                <li><a href="/Home.html">Home</a></li>
+                <li><a href="/Products.html">Products</a></li>
+                <li><a href="/About.html">About</a></li>
+                <li><a href="/Contact.html">Contact</a></li>
+                
+            </ul>
+        </nav>
+        <main class="group">
+            <nav class="col1">
+                <ul class="subMenu">
+                    <li><a href="https://google.com">Google</a></li>
+                    <li><a href="https://bing.com">Bing</a></li>
+                    <li><a href="https://ask.com">Ask</a></li>
+                    <li><a href="https://yahoo.com">Yahoo</a></li>
+                </ul>
+            </nav>
+            <section class="col2">
+                <table class="borderedHeaderTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Abe</td>
+                            <td>10/1/2017</td>
+                            <td>Scrape Sidewalk</td>
+                        </tr>
+                        <tr>
+                            <td>Byron</td>
+                            <td>10/1/2017</td>
+                            <td>Rake Leaves</td>
+                        </tr>
+                        <tr>
+                            <td>Carter</td>
+                            <td>10/1/2017</td>
+                            <td>Wash Car</td>
+                        </tr>
+                        <tr>
+                            <td>Dennis</td>
+                            <td>10/1/2017</td>
+                            <td>Eat Pizza</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <aside class="col3">
+                <h2>More Info</h2>
+                <p>Meow meow put toy mouse in food bowl run out of litter box at full speed meow, present belly, scratch hand
+                    when stroked or thinking longingly about tuna brine. Mark territory. Stare at the wall, play with food
+                    and get confused by dust sit by the fire. Instantly break out into full speed gallop across the house
+                    for no reason. Intently sniff hand curl up and sleep on the freshly laundered towels or scratch leg;
+                    meow for can opener to feed me so cats secretly make all the worlds muffins love to play with owner's
+                    hair tie, cat fur is the new black so kitten is playing with dead mouse. </p>
+            </aside>
+
+
+        </main>
+    </div>
+</body>
+</html>
