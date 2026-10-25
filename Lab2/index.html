@@ -31,7 +31,7 @@
             box-sizing: border-box;
         }
 
-        input[type="text"], select, textarea {
+        input[type="text"], select, textarea, input {
             font-family: "Times New Roman", sans-serif;
             width: 100%;
             padding: 10px;
@@ -63,12 +63,14 @@
     <div>
         <h1 class="header">Lab 2 - Chanin Timbal</h1>
     </div>
+
+    <!-- TODO: put labels and ID tags to add accessibility requirements -->
     <form class="formstyle" action="https://otapp-cstwebdev.azurewebsites.net/" method="post">
-        Student ID: <input type="text" name="StudentID" maxlength="9"><br>
+        <label>Student ID:</label><input type="text" name="StudentID" maxlength="9"><br>
         Name: <input type="text" name="Name" placeholder="First Last"><br>
-        Graduation Date: <input type="text" name="GraduationDate" placeholder="MM-DD-YYYY"><br>
-        Email Address: <input type="text" name="EmailAddress" placeholder="example@university.edu"><br>
-        Age: <input type="number" name="Age" min="0" maxlength="3"><br>
+        Graduation Date: <input type="date" name="GraduationDate" placeholder="MM-DD-YYYY"><br>
+        Email Address: <input type="email" name="EmailAddress" placeholder="example@university.edu"><br>
+        Age: <input type="number" name="Age" min="0" max="100"><br>
         Hobby: <input type="text" name="Hobby"><br>
         User Type: <select name="UserType">
             <option value="Student">Student</option>
