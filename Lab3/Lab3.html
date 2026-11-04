@@ -5,103 +5,100 @@
     <title>Fun with CSS - CST356</title>
 
     <style>
-        @media (max-width: 768px) {
-            body {
-                margin: 0;
-                background-color: #6DA398;
-                border: solid 8px;
-                border-color: #00362C;
-            }
-            #wrapper{
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            #mainMenu {
-                box-sizing: border-box;
-                background-color: #44887B;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                list-style: none;
-                text-align: left;
-            }
-
-            #mainMenu a{
-                text-decoration: none;
-                color: white;
-            }
-
-            #mainMenu li{
-                border: 1px solid black;
-                padding: 10px;
-            }
-
-            #mainMenu li:nth-child(2) {
-                background-color: #246D5F;
-            }
-
-            #mainMenu li:nth-child(4) {
-                background-color: #246D5F;
-            }
-
-            #mainMenu li:hover{
-                background-color: white;
-            }
-
-            #mainMenu li:hover a{
-                color: black;
-            }
-
-            .subMenu {
-                box-sizing: border-box;
-                background-color: #0E5144;
-                width: 100%;
-                padding: 0;
-                list-style: none;
-                text-align: left;
-            }
-
-            .subMenu a{
-                text-decoration: none;
-                color: white;
-            }
-
-            .subMenu li{
-                border: 1px solid black;
-                padding: 10px;
-            }
-
-            .subMenu li:nth-child(2){
-                background-color: #246D5F;
-            }
-
-            .subMenu li:nth-child(4){
-                background-color: #246D5F;
-            }
-
-            .subMenu li:hover{
-                background-color: white;
-            }
-
-            .subMenu li:hover a{
-                color: black;
-            }
-
-            .borderedHeaderTable{
-                border-collapse: collapse;
-                width: 100%;
-                text-align: left;
-            }
-
-            .borderedHeaderTable thead{
-                border: 2px solid; 
-            }
-
+        body {
+            margin: 0;
+            background-color: #6DA398;
+            border: solid 8px;
+            border-color: #00362C;
+        }
+        #wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
         }
 
-        @media (min-width: 768px) and (max-width: 992px) {
+        #mainMenu {
+            box-sizing: border-box;
+            background-color: #44887B;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: left;
+        }
+
+        #mainMenu a{
+            text-decoration: none;
+            color: white;
+        }
+
+        #mainMenu li{
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        #mainMenu li:nth-child(2) {
+            background-color: #246D5F;
+        }
+
+        #mainMenu li:nth-child(4) {
+            background-color: #246D5F;
+        }
+
+        #mainMenu li:hover{
+            background-color: white;
+        }
+
+        #mainMenu li:hover a{
+            color: black;
+        }
+
+        .subMenu {
+            box-sizing: border-box;
+            background-color: #0E5144;
+            width: 100%;
+            padding: 0;
+            list-style: none;
+            text-align: left;
+        }
+
+        .subMenu a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .subMenu li{
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .subMenu li:nth-child(2){
+            background-color: #246D5F;
+        }
+
+        .subMenu li:nth-child(4){
+            background-color: #246D5F;
+        }
+
+        .subMenu li:hover{
+            background-color: white;
+        }
+
+        .subMenu li:hover a{
+            color: black;
+        }
+
+        .borderedHeaderTable{
+            border-collapse: collapse;
+            width: 100%;
+            text-align: left;
+        }
+
+        .borderedHeaderTable thead{
+            border: 2px solid; 
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
             body{
                 border: 5px solid #6DA398;
                 background-color: #b5e0d8;
