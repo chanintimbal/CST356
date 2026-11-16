@@ -1,0 +1,9 @@
+    .card {
+        width: 150px;
+        height: 150px;
+        background-image: url('img/animemory.png');
+        background-size: cover;
+        display: inline-block;
+        margin: 10px;
+        cursor: pointer;
+    }
