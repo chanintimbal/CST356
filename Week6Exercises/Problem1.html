@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem1</title>
+</head>
+<body>
+    <span id="SampleText" class="Text">Sample text retrieved by #method#</span>
+    <ul id="output"></ul>
+    <script>
+        const output = document.getElementById("output");
+
+        let element1 = document.getElementById("SampleText");
+        output.innerHTML += `<li>${element1.textContent.replace("#method#", "document.getElementById")}</li>`;
+
+        let element2 = document.getElementsByTagName("span")[0];
+        output.innerHTML += `<li>${element2.textContent.replace("#method#", "document.getElementsByTagName")}</li>`;
+
+        let element3 = document.getElementsByClassName("Text")[0];
+        output.innerHTML += `<li>${element3.textContent.replace("#method#", "document.getElementsByClassName")}</li>`;
+
+
+        let element4 = document.querySelector("#SampleText");
+        output.innerHTML += `<li>${element4.textContent.replace("#method#", "document.querySelector")}</li>`;
+    </script>
+</body>
+</html>

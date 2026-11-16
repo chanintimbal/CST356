@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem5</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Times New Roman', serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            margin: 5px 0;
+        }
+
+        .container{
+            background-color: #cde8ff;
+            display: flex;
+            flex-direction: column;
+            border: 3px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #moves {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pokémon Info: </h1>
+    <div class="container">
+            <p id="name"></p>
+    <p id="height"></p>
+    <p id="weight"></p>
+    <p id="base_experience"></p>
+    <p id="abilities"></p>
+    <p id="moves"></p>
+    </div>
+
+    <script>
+        const getInfo = async () => {
+            try {
+                const response = await fetch('https://pokeapi.co/api/v2/pokemon/mew');
+                const data = await response.json();
+
+                document.querySelector('#name').textContent = `Name: ${data.name}`;               
+                document.querySelector('#height').textContent = `Height: ${data.height}`;
+                document.querySelector('#weight').textContent = `Weight: ${data.weight}`;
+                document.querySelector('#base_experience').textContent = `Base Experience: ${data.base_experience}`;
+                document.querySelector('#abilities').textContent = `Abilities: ${data.abilities.map(ability => ability.ability.name).join(', ')}`;
+                document.querySelector('#moves').textContent = `Moves: ${data.moves.map(move => move.move.name).join(', ')}`;
+            } catch (error) {
+                console.error('Error fetching Pokémon info:', error);
+            }
+        };
+
+        getInfo();
+
+    </script>
+</body>
+</html>

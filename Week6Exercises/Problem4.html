@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem4</title>
+</head>
+<body>
+    <p>
+        The console will show:
+        Task 1: 1
+        Task 2: 1
+        Task 1: 2
+        Task 2: 2
+        Task 1: 3
+        Task 2: 3
+        Task 1: 4
+        Task 2: 4
+        Task 1: 5
+        Task 2: 5
+        Timeout Task 1
+        Timeout Task 2
+        Timeout Task 3
+        Timeout Task 4
+        Timeout Task 5
+    </p>
+    <p>
+        The synchronous code is ran first, so the function calls execute,
+        then the microtasks are executed, which are the promises, so it keeps execusting that
+        until the promise is resolved, which is when the count of each task reaches 5.
+        Then the macrotasks go which in this case is the set timeout
+    </p>
+    <script>
+        let timeoutCount = 0;
+        let task1Count = 0;
+        let task2Count = 0;
+
+        function timeoutTask() {
+            console.log(`Timeout Task ${++timeoutCount}`);
+            if(timeoutCount < 5) {
+                setTimeout(timeoutTask, 0);
+            }
+        }
+        function addTask1() {
+            console.log(`Task 1: ${++task1Count}`);
+            if (task1Count < 5) {
+                Promise.resolve().then(addTask1);
+            }
+        }
+        function addTask2() {
+            console.log(`Task 2: ${++task2Count}`);
+            if (task2Count < 5) {
+                Promise.resolve().then(addTask2);
+            }
+        }
+
+        setTimeout(timeoutTask, 0);
+        addTask1();
+        addTask2();
+    </script>
+</body>
+</html>

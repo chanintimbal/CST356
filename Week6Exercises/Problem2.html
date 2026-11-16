@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem2</title>
+</head>
+<body>
+    <script>
+        function createDiscount(discountRate) {
+            return function(price) {
+                return price - (price * discountRate);
+            };
+        }
+
+        let seniorCitizenDiscount = createDiscount(0.25);
+        let veteranDiscount = createDiscount(0.15);
+
+        console.log(seniorCitizenDiscount(100));
+        console.log(seniorCitizenDiscount(50));
+        console.log(veteranDiscount(100));
+        console.log(veteranDiscount(50));
+    </script>
+</body>
+</html>
