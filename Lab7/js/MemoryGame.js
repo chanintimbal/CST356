@@ -1,3 +1,4 @@
+
 import { shuffle } from './ArrayShuffle.js';
 
 export class MemoryGame {
@@ -16,6 +17,14 @@ export class MemoryGame {
     // Stores the promise from the fetch event to determine if data operations have completed
     ready = null;
 
+    activeCards = [];
+
+    matchedPairs = 0;
+
+    lockBoard = false;
+
+    numMatches = 0;
+
     constructor(gameBoardElement, gameTimerElement, cardTemplate) {
         this.gameBoardElement = gameBoardElement;
         this.gameTimerElement = gameTimerElement;
@@ -30,8 +39,7 @@ export class MemoryGame {
             })
             .then(data => {
                 this.cardDefinitions = data;
-            })
-            .catch(error => console.log(error));
+            });
     }
 
     newGame(numMatches) {
@@ -43,9 +51,16 @@ export class MemoryGame {
         clearInterval(this.gameTimer);
         this.gameTimer = null;
 
+        // reset timer
         this.gameTime = 0;
         this.gameTimerElement.textContent = 0;
 
+        this.activeCards = [];
+        this.matchedPairs = 0;
+        this.lockBoard = false;
+        this.numMatches = numMatches;
+
+        // clear
         this.gameBoardElement.replaceChildren();
 
         this.gameCards = [];
@@ -58,6 +73,11 @@ export class MemoryGame {
                 cardElement.dataset.name = this.cardDefinitions[i].name;
                 cardElement.dataset.url = this.cardDefinitions[i].url;
 
+                // click listener
+                cardElement.addEventListener("click", () => {
+                    this.flipCard(cardElement);
+                });
+
                 this.gameCards.push(card);
             }
         }
@@ -68,9 +88,69 @@ export class MemoryGame {
             this.gameBoardElement.append(card);
         }
 
+        //start timer
         this.gameTimer = setInterval(() => {
             this.updateGameTime();
         }, 1000);
+    }
+
+    flipCard(card) {
+        if (this.lockBoard) {
+            return;
+        }
+
+        if (card.dataset.active === "true" || card.dataset.matched === "true") {
+            return;
+        }
+
+        // Flip the card over
+        card.dataset.active = true;
+        card.style.backgroundImage = `url('${card.dataset.url}')`;
+
+        this.activeCards.push(card);
+
+        // Check if two cards are flipped
+        if (this.activeCards.length === 2) {
+            this.checkMatch();
+        }
+    }
+
+    checkMatch() {
+        const [card1, card2] = this.activeCards;
+
+        // Check if match
+        if (card1.dataset.name === card2.dataset.name) {
+            card1.dataset.active = false;
+            card2.dataset.active = false;
+
+            card1.dataset.matched = true;
+            card2.dataset.matched = true;
+
+            this.matchedPairs++;
+            this.activeCards = [];
+
+            // Check if all matches are found
+            if (this.matchedPairs === this.numMatches) {
+                clearInterval(this.gameTimer);
+                this.gameTimer = null;
+
+                alert(`You won! It took you ${this.gameTime} seconds.`);
+            }
+        } else {
+            this.lockBoard = true;
+
+            // Wait two seconds before flipping the cards back
+            setTimeout(() => {
+                card1.dataset.active = false;
+                card2.dataset.active = false;
+
+                card1.style.backgroundImage = "url('./img/animemory.png')";
+                card2.style.backgroundImage = "url('./img/animemory.png')";
+
+                this.activeCards = [];
+                this.lockBoard = false;
+            }, 2000);
+        }
     }
 
     updateGameTime() {
