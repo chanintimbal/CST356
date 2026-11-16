@@ -4,9 +4,11 @@ const gameBoard = document.getElementById('gameBoard');
 const gameTimer = document.getElementById('timer');
 const cardTemplate = document.getElementById('gameCard');
 const newGameButton = document.getElementById('newGame');
+const matchesElement = document.getElementById('matches');
+const gamesPlayedElement = document.getElementById('gamesPlayed');
 
 newGameButton.disabled = true;
-const game = new MemoryGame(gameBoard, gameTimer, cardTemplate);
+const game = new MemoryGame(gameBoard, gameTimer, cardTemplate, matchesElement, gamesPlayedElement);
 
 try {
     await game.ready;

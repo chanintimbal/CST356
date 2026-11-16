@@ -1,3 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    max-width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: #96d7e1;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-radius: 20px;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+
+}
+
+.container p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    color: #555;
+}
+
+#gameTimer {
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    margin: 10px auto;
+    background-color: #4a84bf;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#gameStats {
+    text-align: center;
+    font-size: 20px;
+    margin: 5px auto;
+    color: #ffffff;
+    background-color: #4a84bf;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
 #gameBoard {
     display: grid;
     grid-template-columns: repeat(5, 150px);
@@ -5,6 +63,7 @@
     gap: 10px;
     justify-content: center;
     padding: 0;
+    margin: 10px 0;
     list-style: none;
 }
 
@@ -13,12 +72,13 @@
     height: 150px;
     background-image: url('img/animemory.png');
     background-size: cover;
+    background-position: center;
     cursor: pointer;
 }
 
 #newGame {
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 12px 25px;
     background-color: #4a84bf;
     color: white;
@@ -33,9 +93,7 @@
     background-color: #356b9e;
 }
 
-#gameTimer {
-    text-align: center;
-    font-size: 24px;
-    margin: 20px auto;
-    width: auto;
+#newGame:disabled {
+    background-color: #888;
+    cursor: not-allowed;
 }

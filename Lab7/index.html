@@ -8,20 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="gameTimer">
-        Time: <span id="timer">0</span>
+    <div class="container">
+        <h1>Lab 7 Animemory</h1>
+        <p>Chanin Timbal</p>
+        <div id="gameTimer">
+            Time: <span id="timer">0</span>
+        </div>
+        <div id="gameStats">
+            Matches: <span id="matches">0</span>
+            number of games played: <span id="gamesPlayed">0</span>
+        </div>
+
+        <ul id="gameBoard"></ul>
+
+        <button id="newGame" type="button">
+            New Game
+        </button>
     </div>
-
-    <ul id="gameBoard"></ul>
-
-    <button id="newGame" type="button">
-        New Game
-    </button>
 
     <template id="gameCard">
         <li class="card"></li>
     </template>
-
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>

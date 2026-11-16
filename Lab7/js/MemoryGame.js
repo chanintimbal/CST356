@@ -25,10 +25,16 @@ export class MemoryGame {
 
     numMatches = 0;
 
-    constructor(gameBoardElement, gameTimerElement, cardTemplate) {
+    matchedPairs = 0;
+
+    gamesPlayed = 0;
+
+    constructor(gameBoardElement, gameTimerElement, cardTemplate, matchesElement, gamesPlayedElement) {
         this.gameBoardElement = gameBoardElement;
         this.gameTimerElement = gameTimerElement;
         this.cardTemplate = cardTemplate;
+        this.matchesElement = matchesElement;
+        this.gamesPlayedElement = gamesPlayedElement;
 
         this.ready = fetch(new URL('../json/CardDef.json', import.meta.url))
             .then(response => {
@@ -57,6 +63,9 @@ export class MemoryGame {
 
         this.activeCards = [];
         this.matchedPairs = 0;
+        this.matchesElement.textContent = this.matchedPairs;
+        this.gamesPlayed++;
+        this.gamesPlayedElement.textContent = this.gamesPlayed;
         this.lockBoard = false;
         this.numMatches = numMatches;
 
@@ -127,6 +136,7 @@ export class MemoryGame {
             card2.dataset.matched = true;
 
             this.matchedPairs++;
+            this.matchesElement.textContent = this.matchedPairs;
             this.activeCards = [];
 
             // Check if all matches are found
